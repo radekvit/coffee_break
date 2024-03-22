@@ -1,0 +1,24 @@
+[package]
+name = "coffee_break"
+version = "1.0.0"
+authors = ["Radek Vít <radekvitr@gmail.com>"]
+edition = "2021"
+rust-version = "1.63.0"
+description = "Take a break while your code compiles"
+repository = "https://github.com/radekvit/coffee_break"
+license = "JSON"
+keywords = ["coffee", "relax", "blazing-fast"]
+categories = ["development-tools", "development-tools::build-utils"]
+
+[lib]
+proc-macro = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+quote = "1.0.10"
+syn = "2.0.53"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-flags = ["--cfg=docsrs"]
