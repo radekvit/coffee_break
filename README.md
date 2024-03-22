@@ -7,7 +7,7 @@
 
 Coffee break is a 🔥 blazing 🚀 fast 🦀 Rust 🥵 library, by Rust developers for Rust developers. It is:
 - **Developer-friendly**: Lets you take a break while compiling your code.
-- **Eco-friendly**: The compiler is just taking a nap. We're not computing the Ackerman function just to slack off.
+- **Eco-friendly**: The compiler is just taking a nap. We're not computing the Ackermann function just to slack off.
 - **Language server-unfriendly**: `rust-analyzer` is now also taking a nap.
 
 ## Overview
