@@ -14,7 +14,7 @@ categories = ["development-tools", "development-tools::build-utils"]
 proc-macro = true
 
 [dependencies]
-syn = { version = "2.0.53", default-features = false, features = ["proc-macro", "parsing"] }
+syn = { version = "2.0.57", default-features = false, features = ["proc-macro", "parsing"] }
 
 [package.metadata.docs.rs]
 all-features = true
