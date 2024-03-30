@@ -6,7 +6,6 @@ version = 3
 name = "coffee_break"
 version = "1.0.0"
 dependencies = [
- "quote",
  "syn",
 ]
 

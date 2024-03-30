@@ -1,7 +1,6 @@
 #![doc = include_str!("../README.md")]
 
 use proc_macro::TokenStream;
-use quote::quote;
 use syn::{parse::Parse, Error};
 
 /// Take a break when compiling.
@@ -26,7 +25,9 @@ pub fn coffee_break(input: TokenStream) -> TokenStream {
     let input = syn::parse_macro_input!(input as CoffeeBreak);
 
     std::thread::sleep(std::time::Duration::from_secs(input.seconds));
-    quote! {()}.into()
+
+    // Return empty stream.
+    TokenStream::new()
 }
 
 struct CoffeeBreak {
