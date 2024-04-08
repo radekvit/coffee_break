@@ -13,11 +13,8 @@ categories = ["development-tools", "development-tools::build-utils"]
 [lib]
 proc-macro = true
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-quote = "1.0.10"
-syn = "2.0.53"
+syn = { version = "2.0.57", default-features = false, features = ["proc-macro", "parsing"] }
 
 [package.metadata.docs.rs]
 all-features = true
