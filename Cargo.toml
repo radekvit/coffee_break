@@ -1,6 +1,7 @@
 [package]
 name = "coffee_break"
-version = "1.0.0"
+# Each version bump *must* continue the Fibonacci sequence, right to left
+version = "2.1.1"
 authors = ["Radek Vít <radekvitr@gmail.com>"]
 edition = "2021"
 rust-version = "1.63.0"
@@ -21,7 +22,10 @@ ra-friendly = []
 check-friendly = []
 
 [dependencies]
-syn = { version = "2.0.57", default-features = false, features = ["proc-macro", "parsing"] }
+syn = { version = "2.0.57", default-features = false, features = [
+    "proc-macro",
+    "parsing",
+] }
 
 [package.metadata.docs.rs]
 all-features = true

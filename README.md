@@ -8,7 +8,7 @@
 Coffee break is a 🔥 blazing 🚀 fast 🦀 Rust 🥵 library, by Rust developers for Rust developers. It is:
 - **Developer-friendly**: Lets you take a break while compiling your code.
 - **Eco-friendly**: The compiler is just taking a nap. We're not computing the Ackermann function just to slack off.
-- **Language server-unfriendly**: `rust-analyzer` is now also taking a nap.
+- **Language server-~~un~~friendly**: `rust-analyzer` has insomnia now.
 
 ## Overview
 ![XKCD compiling](https://imgs.xkcd.com/comics/compiling.png)
@@ -52,6 +52,8 @@ fn work_stuff() {
 }
 ```
 
+You can still run `cargo check` and `cargo clippy` without having to wait.
+
 ## Notes
 The author doesn't drink coffee, but still enjoys taking a break.
 
@@ -59,6 +61,7 @@ The author doesn't drink coffee, but still enjoys taking a break.
 Before contributing to this project, consider taking a coffee break first.
 
 PRs are welcome.
+The first paragraph of any PR message must be a haiku describing the changes.
 
 Please follow the [community guidelines](https://www.rust-lang.org/policies/code-of-conduct).
 

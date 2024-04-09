@@ -14,10 +14,8 @@ use syn::{parse::Parse, Error};
 /// ```
 /// use coffee_break::coffee_break;
 ///
-/// fn main() {
-///     // Take a break while compiling this
-///     coffee_break!(60 seconds);
-/// }
+/// // Take a break while running `cargo build`
+/// coffee_break!(60 seconds);
 /// ```
 ///
 #[proc_macro]
