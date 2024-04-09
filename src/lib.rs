@@ -24,9 +24,32 @@ use syn::{parse::Parse, Error};
 pub fn coffee_break(input: TokenStream) -> TokenStream {
     let input = syn::parse_macro_input!(input as CoffeeBreak);
 
-    std::thread::sleep(std::time::Duration::from_secs(input.seconds));
+    let is_checking = if cfg!(feature = "check-friendly") {
+        std::env::args_os().any(|arg| {
+            let arg = arg.to_string_lossy();
+            arg.starts_with("--emit=") && arg.contains("metadata") && !arg.contains("link")
+        })
+    } else {
+        false
+    };
 
-    // Return empty stream.
+    // We know if we're using `rust-analyzer` instead of `rustc` in the first argument.
+    // However proc-macro checking needs at least one build of the macros to work so you'll
+    // take a small break during the setup
+    let is_rust_analyzer = if cfg!(feature = "ra-friendly") {
+        std::env::args_os()
+            .next()
+            .unwrap()
+            .to_string_lossy()
+            .ends_with("rust-analyzer-proc-macro-srv")
+    } else {
+        false
+    };
+
+    if !(is_checking || is_rust_analyzer) {
+        std::thread::sleep(std::time::Duration::from_secs(input.seconds));
+    }
+    
     TokenStream::new()
 }
 
