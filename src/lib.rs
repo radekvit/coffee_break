@@ -20,6 +20,9 @@ use syn::{parse::Parse, Error};
 ///
 #[proc_macro]
 pub fn coffee_break(input: TokenStream) -> TokenStream {
+    if cfg!(feature = "too-hot") {
+        return TokenStream::new();
+    }
     let input = syn::parse_macro_input!(input as CoffeeBreak);
 
     let is_checking = if cfg!(feature = "check-friendly") {
