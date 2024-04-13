@@ -21,6 +21,33 @@ use syn::{parse::Parse, Error};
 #[proc_macro]
 pub fn coffee_break(input: TokenStream) -> TokenStream {
     let input = syn::parse_macro_input!(input as CoffeeBreak);
+    if cfg!(feature = "take-a-coffee") {
+        // reference: https://www.asciiart.eu/food-and-drinks/coffee-and-tea
+        println!(r#"
+                      (
+                        )     (
+                 ___...(-------)-....___
+             .-""       )    (          ""-.
+       .-'``'|-._             )         _.-|
+      /  .--.|   `""---...........---""`   |
+     /  /    |                             |
+     |  |    |                             |
+      \  \   |                             |
+       `\ `\ |                             |
+         `\ `|                             |
+         _/ /\                             /
+        (__/  \                           /
+     _..---""` \                         /`""---.._
+  .-'           \                       /          '-.
+ :               `-.__             __.-'              :
+ :                  ) ""---...---"" (                 :
+  '._               `"--...___...--"`              _.'
+jgs \""--..__                              __..--""/
+     '._     """----.....______.....----"""     _.'
+        `""--..,,_____            _____,,..--""`
+                      `"""----"""`
+"#);
+    }
 
     let is_checking = if cfg!(feature = "check-friendly") {
         std::env::args_os().any(|arg| {
